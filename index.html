@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VERSE DASH</title>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Permanent+Marker&display=swap" rel="stylesheet"> 
+<style>
+body {
+	background-color:#87cefa;
+}
+#contain {
+	width: 300px;
+	border: thin solid purple;
+	border-radius: 25px;
+	background-color: white;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 5px;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	
+	}
+#intro {
+	text-align: center;
+	font-family: 'Indie Flower', cursive;
+}	
+.panik {
+	width: 50%;
+	height: 50%;
+	animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+	0% {transform: translate(1px, 1px) rotate(0deg);}
+	10% {transform: translate(-1px, -2px) rotate(-1deg);}
+	20% {transform: translate(-3px, 0px) rotate(1deg);}
+	30% {transform: translate(3px, 2px) rotate(0deg);}
+	40% {transform: translate(1px, -1px) rotate(1deg);}
+	50% {transform: translate(-1px, 2px) rotate(-1deg);}
+	60% {transform: translate(-3px, 1px) rotate(0deg);}
+	70% {transform: translate(3px, 1px) rotate(-1deg);}
+	80% {transform: translate(-1px, 2px) rotate(1deg);}
+	90% {transform: translate(1px, 2px) rotate(0deg);}
+	100% {transform: translate(1px, -2px) rotate(-1deg);}
+
+	}
+	
+.fstyle {
+	font-family: 'Permanent Marker', cursive;
+	color: red;
+	font-size:40px;
+	}	
+#howto {
+	border: thin solid purple;
+	border-radius: 25px;
+	padding: 5px;
+	margin: 10px;
+	}	
+.btn {
+	padding: 5%;
+	margin: 5px 0px 15px 0px;
+	background-color:red;
+	font-family: 'Permanent Marker', cursive;
+	font-size:18px;
+	color: white;
+	border: 0;
+	border-radius: 25px;
+	}	
+.btn:hover {
+	background-color: orange;
+	} 	
+.highlight {
+	
+	background-color: purple;
+	color: white;
+	padding: 2%;
+	border-radius: 25px;
+	}	
+.centered {
+	text-align: center;
+}
+#thequote {
+	font-family: 'Indie Flower', cursive;
+	padding: 3%;
+	margin: 20px 0px 20px 0px;
+	font-size:20px;
+	}
+.btn1 {
+	display: block;
+	padding: 3%;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 16px;
+	text-align: center;
+	width: 80%;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+	background-color: purple;
+	color: white;
+	border: none;
+	border-radius: 25px;
+	}
+.btn1:hover {
+	background-color: orange;
+	border: thin groove purple;
+}
+#bible {
+	
+	margin-bottom: 20px;
+}
+#timer {
+	font-family: 'Permanent Marker', cursive;
+	text-align: center;
+	font-size:20px;
+	height: 30px;
+	padding-right: 20px;
+	}
+#loser h1 {
+	font-family: 'Permanent Marker', cursive;
+	color: orange;
+	animation: shake 2s infinite;
+	}	
+	
+#success h1 {
+	font-family: 'Permanent Marker', cursive;
+	color: blue;
+	animation: changec 1.5s infinite;
+	padding-top: 50px;
+	}	
+#celebrate {
+	background-image: url(piks/confetti.gif);
+	height: 200px;
+	background-repeat: repeat;
+}
+@keyframes  changec {
+	0% {color: purple;}
+	100% {color: gold;}
+	}
+.instruct {
+	font-family: 'Indie Flower', cursive;
+	font-size:14px;
+	}		
+</style>
+</head>
+
+<body>
+
+<div id="contain">
+<!--Intro part -->
+<div id="intro">
+<h2 class="fstyle">VERSE DASH</h2>
+<h4 class="highlight">Can you find the correct bible verse before the time runs out?</h4>
+
+<!--picture hold -->
+<div id="pichold">
+<img src="piks/panik.png" width="500" height="500" alt="Panik" class="panik">
+</div>
+
+<!--How to play -->
+<div id="howto">
+<h3><strong><u>How to play</u></strong></h3>
+<p><b>Tools Required: <u>Bible</u></b></p>
+<p>Search for the correct bible verse and click the right button before time runs out</p>
+</div>
+
+<button class="btn" onClick="begin()">Begin the Game</button>
+</div>
+
+<!--Game part -->
+<div id="game" class="centered">
+<h2 class="fstyle">VERSE DASH</h2>
+<div id="timer">0</div>
+
+<!--Quotation -->
+<div id="thequote"></div>
+
+
+<!--Answer Buttons -->
+
+<div id="bible">
+<p class="instruct">(Pick the correct answer)</p>
+<button class="btn1 rand1">CHOICE 1</button>
+<button class="btn1 rand2">CHOICE 2</button>
+<button class="btn1 rand3">CHOICE 3</button>
+</div>
+
+
+</div>
+
+<!--loser Part -->
+<div id="loser" class="centered">
+<h2 class="fstyle">VERSE DASH</h2>
+<h1>WHO RAISED YOU?</h1>
+<div id="pichold">
+<img src="piks/panik.png" width="500" height="500" alt="Panik" class="panik">
+</div>
+<button class="btn" onClick="begin()">Try Again?</button>
+</div>
+
+<!--Success Part -->
+<div id="success" class="centered">
+<h2 class="fstyle">VERSE DASH</h2>
+<div id="celebrate">
+<h1>THATS RIGHT</h1>
+</div>
+</div>
+
+
+</div>
+
+<script>
+// array
+
+const bible = [
+{
+	verse: "1 PETER 2:2",
+	quote: "As newborn babes, desire the sincere milk of the word, that ye may grow thereby:"
+	},
+{
+	verse: "1 PETER 4:11",
+	quote: "If any man speak, let him speak as the oracles of God; if any man minister, let him do it as of the ability which God giveth: that God in all things may be glorified through Jesus Christ, to whom be praise and dominion forever and ever. Amen."
+	},
+{
+	verse: "2 PETER 1:20",
+	quote: "Knowing this first, that no prophecy of the scripture is of any private interpretation"
+	},
+{
+	verse: "GALATIANS 5:19",
+	quote: "Now the works of the flesh are manifest, which are these; adultery, fornication, uncleanness, lasciviousness"
+	},	
+{
+	verse: "TITUS 2:2",
+	quote: "The aged women likewise, that they be in behaviour as becometh holiness, not false, not false accusers, not given to much wine, teachers of good things;"
+	},	
+{
+	verse: "HEBREWS 10:23",
+	quote: "Let  us  hold  fast  the  profession  of our faith without wavering; (for he is faithful that promised;)"
+	},			
+{
+	verse: "HEBREWS 10:24",
+	quote: "And let us consider one another to provoke unto love and to good works:"
+	},	
+{
+	verse: "GALATIANS 5:19",
+	quote: "Now  the  works  of  the  flesh  are  manifest,  which  are these;  Adultery,  fornication,  uncleanness,  lasciviousness,"
+	},	
+{
+	verse: "GALATIANS 5:20",
+	quote: "Idolatry, witchcraft, hatred, variance, emulations, wrath,  strife,  seditions,  heresies,"
+	},	
+{
+	verse: "GALATIANS 5:21",
+	quote: "Envyings,  murders, drunkenness,  revellings,  and  such  like:  of  the  which  I  tellyou  before,  as  I  have  also  told  you  in  time  past,  that  they which  do  such  things  shall  not  inherit  the  kingdom  of  God "
+	},
+{
+	verse: "GALATIANS 5:22",
+	quote: "But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith,"
+	},	
+{
+	verse: "GALATIANS 5:23",
+	quote: "Meekness, temperance: against such there is no law. "
+	},
+{
+	verse: "TITUS 2:3",
+	quote: "The aged women likewise, that they be in behaviour as becometh  holiness,  not  false  accusers,  not  given  to  much wine,  teachers  of  good  things;"
+	},	
+{
+	verse: "TITUS 2:4",
+	quote: "That  they  may  teach the  young  women  to  be  sober,  to  love  their  husbands,  to love their children,"
+	},	
+{
+	verse: "TITUS 2:5",
+	quote: "To be discreet, chaste, keepers at home,  good,  obedient  to  their  own  husbands,  that  the  word of God be not blasphemed."
+	},	
+{
+	verse: "2 TIMOTHY 3:16",
+	quote: "All  scripture  is  given  by  inspiration of  God,  and  is  profitable  for  doctrine,  for  reproof,  for correction,  for  instruction  in  righteousness: "
+	},
+{
+	verse: "1 CORINTHIANS 11:3",
+	quote: "But I would have you know, that the head of every  man  is  Christ;  and  the  head  of  the  woman  is  the man;  and  the  head  of  Christ is God. "
+	},
+{
+	verse: "MATTHEW 16:26",
+	quote: "For  what  is  a  man  profited,  if  he shall  gain  the  whole  world,  and  lose  his  own  soul?  or  what shall  a  man  give  in  exchange  for  his  soul?"
+	},	
+{
+verse: "1 PETER 4:2",
+	quote: "That  he  no  longer  should  live  the  rest  of  his  time  in  the flesh  to  the  lusts  of  men,  but  to  the  will  of  God."
+	},
+{
+verse: "COLOSSIANS 3:2",
+	quote: "Set your affection on things above, not on things on the earth. "
+	},	
+{
+verse: "1 JOHN 2:15",
+	quote: "Love  not  the  world, neither the things that are in the world. If any man love the world,  the  love  of  the  Father  is  not  in  him."
+	},	
+{
+verse: "ROMANS 12:2",
+	quote: "And  be  not  conformed  to  this  world:  but  be  ye transformed  by  the  renewing  of  your  mind,  that  ye  may prove what is that good, and acceptable, and perfect, will of God."
+	},	
+{
+verse: "TITUS 3:3",
+	quote: "For we ourselves also were sometimes foolish, disobedient, deceived, serving divers lusts and pleasures, living in malice and  envy,  hateful,  and  hating  one  another. "
+	},
+{
+verse: "TITUS 3:5",
+	quote: "Not  by  works  of  righteousness  which  we have  done,  but  according  to  his  mercy  he  saved  us,  by  the washing  of  regeneration,  and  renewing  of  the  Holy  Ghost;"
+	},	
+{
+verse: "MATTHEW 22:14",
+	quote: "For many are called, but few are chosen"
+	},	
+{
+verse: "1 JOHN 4:2",
+	quote: "Hereby know ye the Spirit of God:  Every  spirit  that  confesseth  that  Jesus  Christ  is  come in the flesh is of God:"
+	},										
+];
+
+
+
+i = 0; 
+var c = Math.floor(Math.random() * 3);
+
+document.getElementById("game").style.display = "none";
+document.getElementById("loser").style.display = "none";
+document.getElementById("success").style.display = "none";
+
+function randomarr() {
+// randomize the array
+const randbib = bible.sort(function(a,b){return 0.5 - Math.random()});
+// labels
+rand1.innerHTML = randbib[0].verse;
+rand1.value = 0;
+rand2.innerHTML = randbib[1].verse;
+rand2.value = 1;
+rand3.innerHTML = randbib[2].verse;
+rand3.value = 2;
+
+
+document.getElementById("thequote").textContent = bible[c].quote;
+}
+
+// select the buttons
+const rand1 = document.querySelector(".rand1");
+const rand2 = document.querySelector(".rand2");
+const rand3 = document.querySelector(".rand3");
+
+
+// mark the answer
+rand1.addEventListener("click", function(){
+	if(rand1.value == c){
+		success();
+		}
+		else {
+			mark();
+			}
+	})
+	
+rand2.addEventListener("click", function(){
+	if(rand2.value == c){
+		success();
+		}
+		else {
+			mark();
+			}		
+	})	
+	
+rand3.addEventListener("click", function(){
+	if(rand3.value == c){
+		success();
+		}
+		else {
+			mark();
+			}		
+	})	
+	
+
+// begin game
+function begin() {
+	document.getElementById("intro").style.display = "none";
+	document.getElementById("game").style.display = "block";
+	document.getElementById("loser").style.display = "none";
+	document.getElementById("timer").style.display = "block";
+	document.getElementById("bible").style.display = "block";
+	document.getElementById("success").style.display = "none";
+	counttime();
+	
+	}
+
+function counttime() {
+	randomarr();
+// timer function
+for (i; i<61; i++) {
+	setTimeout(function(){
+	--i;
+	document.getElementById("timer").textContent = "Time Remaining: " + i;
+		colorwarn();
+		loserville();
+	}, 1000 * i);
+		};
+	
+}
+
+// counter warning color
+function colorwarn() {
+
+				if (i <=60) {
+	document.getElementById("timer").style.color = "green";	
+		}
+				if (i <=30) {
+	document.getElementById("timer").style.color = "orange";	
+		}
+				if (i <=10) {
+	document.getElementById("timer").style.color = "red";	
+		}
+		
+	};
+
+// loser screen
+function loserville() {
+		if (i<=0) {
+		document.getElementById("game").style.display = "none";
+		document.getElementById("loser").style.display = "block";
+		
+		}
+	};
+
+	
+// function wrong answer
+function mark() {
+
+	document.getElementById("game").style.display = "none";
+	document.getElementById("loser").style.display = "block";
+	document.getElementById("intro").style.display = "none";
+
+}
+
+// success
+
+function success() {
+	
+document.getElementById("success").style.display = "block";
+document.getElementById("bible").style.display = "none";
+document.getElementById("timer").style.display = "none";
+document.getElementById("game").style.display = "none";
+window.setTimeout(begin, 4000);
+	}	
+		
+</script>
+</body>
+</html>
